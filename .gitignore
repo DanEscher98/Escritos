@@ -1,0 +1,10 @@
+# Compiled files #
+##################
+*.pdf
+
+# Other files #
+###############
+*.log
+*.aux
+*.out
+*.lua

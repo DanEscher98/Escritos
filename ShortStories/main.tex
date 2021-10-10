@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[hybrid]{markdown}   % Necesaria para incluir archivos md
+\usepackage[utf8]{inputenc}	    % Importante para escribir acentos
+\usepackage{indentfirst}        % Para indentar el primer parrafo
+\usepackage{blindtext}          % Permite incorporar archivos externos
+\usepackage{xifthen}            % Aqui se encuentra la macro \IfFileExists
+\usepackage{tikz}               % Aqui se encuentra la macro \foreach
+
+%Para compilar el documento
+%pdflatex --shell-escape file.tex
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        \Huge\textbf{Cuentos Cortos}\\
+        \vspace{1.5cm}
+        \textbf{Daniel Colin}
+        \vfill   
+        A simple template   
+        \vspace{0.8cm}         
+    \end{center}
+\end{titlepage}
+
+\foreach \N in {1,2,3,4,5,6,7,8,9} {
+    \IfFileExists{Files/\N.md} {
+	    \markdownInput{Files/\N.md}
+    }
+	{}
+}
+
+\end{document}
