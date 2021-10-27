@@ -10,4 +10,4 @@ open: $(TARGET).pdf
 
 clear:
 	rm -f *.aux *.log *.out *.pdf
-	clear && ls
+	clear && exa --color=always
