@@ -5,37 +5,29 @@
 \usepackage{blindtext}          % Permite incorporar archivos externos
 \usepackage{xifthen}            % Aqui se encuentra la macro \IfFileExists
 \usepackage{tikz}               % Aqui se encuentra la macro \foreach
-\usepackage{hyperref}
-\usepackage{bookmark}
-\usepackage[spanish]{babel}
-\renewcommand{\markdownRendererHeadingTwo}[1]{\section*{#1}}
-\renewcommand{\markdownRendererHeadingThree}[1]{\section*{#1}}
+
 %Para compilar el documento
 %pdflatex --shell-escape file.tex
-
 
 \begin{document}
 \begin{titlepage}
     \begin{center}
         \vspace*{1cm}
-        \Huge\textbf{Markdown Example}\\
+        \Huge\textbf{Diario 2021}\\
         \vspace{1.5cm}
         \textbf{Daniel Colin}
         \vfill   
-        A simple template    
+        A simple template   
         \vspace{0.8cm}         
     \end{center}
 \end{titlepage}
-\tableofcontents
 
-\chapter*{Introducción}
-\foreach \Month in {Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic}{
-    \chapter{\Month}\newpage
-    \foreach \Day in{1,...,31}{
-        \IfFileExists{2021/\Month/day-\Day.md}{
-            \markdownInput{2021/\Month/day-\Day.md}
+\foreach \M in {Jul} {
+    \foreach \D in {4,5,14} {
+        \IfFileExists{2021/\M/day-\D.md} {
+	        \markdownInput{2021/\M/day-\D.md}
         }
-        {}
+	    {}
     }
 }
 
