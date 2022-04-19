@@ -36,4 +36,20 @@
 - Política, "Tenemos demasiado poder en cuanto podemos manipular más
     personas de las que podemos humanizar". La comunidad tribal.
 - Manipulación, "El altruismo al prójimo humanizado es inviable"
-- Teoría del índice o hacia una filosofía absolutista
+- Fantasía del índice absoluto
+- Estudio del ser de las cateogrias gramaticales en relación al tiempo
+
+## Proposiciones
+- La interpretación fuera de contexto es causa de la agresión
+- Uno no puede creer en lo que uno crea
+- Eres lo que decides recordar y lo que no puedes dejar de ser
+- Queremos ser amados en nuestro contexto elegido
+- Lo que se recuerdan son las diferencias
+- Toda nuestra percepción es relativa y subjetiva
+- Lo imperfecto puede reflejar la perfección
+- Los conceptos son atemporales, los sentimientos no
+- Toda verdad es inmune a un contra-argumento. La verdad última es la
+    realidad
+- Las realidades subordinadas poseen atributos morales en la medida
+    que son medio para percibir
+- El amor perfecto a uno mismo, es mediante el otro
