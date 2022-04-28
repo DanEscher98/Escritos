@@ -17,8 +17,10 @@ for file_name in $(ls Files); do
 	if [ $? -ne 0 ]; then
 		echo "$num $name" >> titles.txt
 	fi
-	mv Files/"$file_name" Files/$num.md
-	echo "$num $name"
+	if [ -n "$num" ]; then
+		mv Files/"$file_name" Files/$num.md
+		echo "$num $name"
+	fi
 done
 
 
