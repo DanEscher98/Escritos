@@ -1,14 +1,35 @@
 \documentclass{article}
 \usepackage[
-	fencedCode,
-	hashEnumerators,
-	inlineFootnotes,
-	hybrid]{markdown}           % Necesaria para incluir archivos md
+	fencedCode,         % Enable the commonmark fenced code block extension
+	hashEnumerators,    % Use hash symbols (#.) as ordered item list markers
+	inlineFootnotes,    % Enable the pandoc inline footnote syntax extension
+	footnotes,          % Enable the pandoc footnote syntax extension
+	html,               % Enable the recognition of HTML markup
+	contentBlocks,      % Enable the iAWriter content blocks syntax extension
+	citations,          % Enable the pandoc citation syntax extension
+	definitionLists,    % Enable the pandoc definition list syntax extension
+	relativeReferences, % Enable relative references in autolinks
+	jekyllData,         % A markdown document may begin with yaml metadata
+	hybrid              % Disable the escaping of special plain TEX characters
+	taskLists           % Pandoc task_lists syntax extension.
+	pipeTables,         % Enable the php Markdown table syntax extension
+	tableCaptions       % Pandoc table_captions syntax extension for pipe tables
+]{markdown}                     % Necesaria para incluir archivos md
 \usepackage[utf8]{inputenc}	    % Importante para escribir acentos
 \usepackage{indentfirst}        % Para indentar el primer parrafo
 \usepackage{blindtext}          % Permite incorporar archivos externos
+\usepackage{tabularx}
 \usepackage{xifthen}            % Aqui se encuentra la macro \IfFileExists
 \usepackage{tikz}               % Aqui se encuentra la macro \foreach
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+	pdftitle={Pensamientos},
+	pdfpagemode=FullScreen,
+}
 
 %Para compilar el documento
 %pdflatex --shell-escape file.tex
@@ -17,7 +38,7 @@
 \begin{titlepage}
 	\begin{center}
 		\vspace*{1cm}
-		\Huge\textbf{Meditaciones peregrinas}\\
+		\Huge\textbf{Apuntes y observaciones}\\
 		\vspace{1.5cm}
 		\textbf{Danyiel Colin}
 		\vfill
@@ -26,7 +47,7 @@
 	\end{center}
 \end{titlepage}
 
-\foreach\N in {1,2,3,4,5,6,7,8} {
+\foreach\N in {1,2,3,4,5,6,7,8,9} {
 		\IfFileExists{Files/\N.md} {
 			\begin{large}
 				\markdownInput{Files/\N.md}
