@@ -7,30 +7,29 @@
 # Compile
 # Rename all files as $num_$name.md
 
+function remove_name() {
+	for file_name in $(ls Files); do
+		num=$(echo $file_name | sed -n 's/\([0-9]*\)_.*$/\1/p')
+		name=$(echo $file_name \
+			| sed -n 's/[0-9]_\(\S*\)\.md$/\1/p')
 
-for file_name in $(ls Files); do
-    num=$(echo $file_name | sed -n 's/\([0-9]*\)_.*$/\1/p')
-    name=$(echo $file_name \
-        | sed -n 's/[0-9]_\(\S*\)\.md$/\1/p')
+		grep -qF "$num $name" titles.txt 2>&1
+		if [ $? -ne 0 ]; then
+			echo "$num $name" >> titles.txt
+		fi
+		if [ -n "$num" ]; then
+			mv Files/"$file_name" Files/$num.md
+		fi
+	done
+}
 
-    grep -qF "$num $name" titles.txt 2>&1
-    if [ $? -ne 0 ]; then
-        echo "$num $name" >> titles.txt
-    fi
-    if [ -n "$num" ]; then
-        mv Files/"$file_name" Files/$num.md
-        echo "rename to: $num.md"
-    fi
-done
+function restore_name() {
+	for file_name in $(ls Files); do
+		num=$(echo $file_name | sed -n 's/\([0-9]*\)\.md$/\1/p')
+		name=$(grep -w "$num" titles.txt | awk '{ print $2 }')
 
-echo $(ls Files)
-
-for file_name in $(ls Files); do
-    num=$(echo $file_name | sed -n 's/\([0-9]*\)\.md$/\1/p')
-    name=$(grep -w "$num" titles.txt | awk '{ print $2 }')
-
-    if [ -n "$num" ] && [ -n "$name" ]; then
-        echo "rename to: $num\_$name.md"
-        mv Files/"$num".md Files/"$num"_"$name".md
-    fi
-done
+		if [ -n "$num" ] && [ -n "$name" ]; then
+			mv Files/"$num".md Files/"$num"_"$name".md
+		fi
+	done
+}
