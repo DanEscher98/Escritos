@@ -19,7 +19,7 @@ for file_name in $(ls Files); do
         fi
         if [ -n "$num" ]; then
                 mv Files/"$file_name" Files/$num.md
-                echo "$num $name"
+                echo "rename to: $num.md"
         fi
 done
 
@@ -30,6 +30,7 @@ for file_name in $(ls Files); do
         name=$(grep -w "$num" titles.txt | awk '{ print $2 }')
 
         if [ -n "$num" ]; then
+				echo "rename to: $num_$name.md"
                 mv Files/"$num".md Files/"$num_$name".md
         fi
 done
