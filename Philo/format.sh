@@ -29,8 +29,8 @@ for file_name in $(ls Files); do
         num=$(echo $file_name | sed -n 's/\([0-9]*\)\.md$/\1/p')
         name=$(grep -w "$num" titles.txt | awk '{ print $2 }')
 
-        if [ -n "$num" ]; then
-				echo "rename to: $num_$name.md"
+        if [ -n "$num" && -n "$name"]; then
+                                echo "rename to: $num_$name.md"
                 mv Files/"$num".md Files/"$num_$name".md
         fi
 done
