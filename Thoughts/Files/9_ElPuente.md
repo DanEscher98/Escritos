@@ -38,6 +38,10 @@ isomorfismo en tonalidad poética?
 | Reconozco eso             | `assert_r obj`                |
 | Creo reconocer eso        | `assert_r --mod assert_c obj` |
 
+- Hola
+- Tengo
+- Curso
+
 ```txt
 Yo recuerdo que
     tu me dijiste que
