@@ -1,12 +1,14 @@
-TARGET 	= main
+TARGET 	= CuentosCortos
 EXT 	= pdf
 FLAGS	= --shell-escape --interaction=nonstopmode
 
 $(TARGET).$(EXT) :
-	pdflatex $(FLAGS) $(TARGET).tex 1> /dev/null
+	pdflatex $(FLAGS) main.tex 1> /dev/null
+	mv main.pdf $(TARGET).$(EXT)
 
-pdf : $(TARGET).pdf
-	evince $(TARGET).pdf
+pdf : $(TARGET).$(EXT)
+	mv $(TARGET).$(EXT) $(HOME)/MyWindows/Working
+
 
 clear :
 	rm -f -d -r _markdown_main/

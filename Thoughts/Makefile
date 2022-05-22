@@ -10,7 +10,7 @@ $(TARGET).$(EXT):
 
 pdf : $(TARGET).pdf
 	@#evince $(TARGET).pdf
-	mv $(TARGET).pdf $(HOME)/MyWindows/Working
+	mv $(TARGET).pdf $(HOME)/MyWindows/Working/Thoughts.pdf
 
 clear:
 	rm -f -d -r _markdown_main/
