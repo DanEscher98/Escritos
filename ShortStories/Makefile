@@ -1,16 +1,19 @@
-TARGET 	= CuentosCortos
+SHELL := /usr/bin/bash
+TARGET 	= main
 EXT 	= pdf
 FLAGS	= --shell-escape --interaction=nonstopmode
 
-$(TARGET).$(EXT) :
-	pdflatex $(FLAGS) main.tex 1> /dev/null
-	mv main.pdf $(TARGET).$(EXT)
+$(TARGET).$(EXT):
+	@bash -c "source ./format.sh; remove_name"
+	pdflatex $(FLAGS) $(TARGET).tex 1> /dev/null
+	@bash -c "source ./format.sh; restore_name"
 
-pdf : $(TARGET).$(EXT)
-	mv $(TARGET).$(EXT) $(HOME)/MyWindows/Working
+pdf : $(TARGET).pdf
+	@#evince $(TARGET).pdf
+	mv $(TARGET).pdf $(HOME)/MyWindows/Working/ShortStories.pdf
 
-
-clear :
+clear:
 	rm -f -d -r _markdown_main/
 	rm -f *.out *.aux *.lua *.log *.pdf
 	clear && exa
+
