@@ -1,0 +1,8 @@
+10 MosaicoCuatroEstampas
+1 SalaConAlfombra
+2 CaminoDeSetos
+3 ElCantaroCalcinado
+4 PorEntreCorrientesDoradas
+5 PantallaRoja
+6 MansionAntigua
+7 EdificioGris
