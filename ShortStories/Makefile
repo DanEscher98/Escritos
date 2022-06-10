@@ -8,7 +8,7 @@ $(TARGET).$(EXT):
 	pdflatex $(FLAGS) $(TARGET).tex 1> /dev/null
 	@bash -c "source ./format.sh; restore_name"
 
-pdf : $(TARGET).pdf
+pdf : $(TARGET).pdf clear
 	@#evince $(TARGET).pdf
 	@#cp $(TARGET).pdf $(HOME)/MyWindows/Working/ShortStories.pdf
 	mv main.pdf CuentosCortos.pdf
@@ -16,6 +16,6 @@ pdf : $(TARGET).pdf
 
 clear:
 	rm -f -d -r _markdown_main/
-	rm -f *.out *.aux *.lua *.log *.pdf
+	rm -f *.out *.aux *.lua *.log
 	clear && exa
 
