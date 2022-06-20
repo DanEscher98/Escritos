@@ -9,7 +9,7 @@ $(TARGET).pdf:
 	@bash -c "source ./format.sh; restore_name"
 	mv main.pdf $(TARGET).pdf
 
-pdf: clear $(TARGET).pdf
+pdf: $(TARGET).pdf clear
 	@evince $(TARGET).pdf
 	@#mv $(TARGET).pdf $(HOME)/MyWindows/Working/Thoughts.pdf
 
