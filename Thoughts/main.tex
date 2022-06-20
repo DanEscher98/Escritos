@@ -53,10 +53,10 @@
 \tableofcontents
 \clearpage
 
-\foreach\N in {1,2,3,4,5,6,7,8,9} {
-		\IfFileExists{Files/\N.md} {
+\foreach\num in {1,2,3,4,5,6,7,8,9} {
+		\IfFileExists{Files/\num.md} {
 			\begin{large}
-				\markdownInput{Files/\N.md}
+				\markdownInput{Files/\num.md}
 			\end{large}
 		}
 		{}
