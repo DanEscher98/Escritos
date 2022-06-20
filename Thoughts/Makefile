@@ -1,19 +1,20 @@
 SHELL := /usr/bin/bash
-TARGET 	= main
-EXT 	= pdf
+TARGET 	= $(shell basename $(PWD))
 FLAGS	= --shell-escape --interaction=nonstopmode
 
-$(TARGET).$(EXT):
+$(TARGET).pdf:
 	@bash -c "source ./format.sh; remove_name"
-	pdflatex $(FLAGS) $(TARGET).tex 1> /dev/null
+	pdflatex $(FLAGS) main.tex 1> /dev/null
+	@pdflatex $(FLAGS) main.tex 1> /dev/null
 	@bash -c "source ./format.sh; restore_name"
+	mv main.pdf $(TARGET).pdf
 
-pdf : $(TARGET).pdf
-	@#evince $(TARGET).pdf
-	mv $(TARGET).pdf $(HOME)/MyWindows/Working/Thoughts.pdf
+pdf: clear $(TARGET).pdf
+	@evince $(TARGET).pdf
+	@#mv $(TARGET).pdf $(HOME)/MyWindows/Working/Thoughts.pdf
 
 clear:
-	rm -f -d -r _markdown_main/
-	rm -f *.out *.aux *.lua *.log *.pdf
+	rm -rdf _markdown_main/
+	rm -f *.out *.aux *.toc *.lua *.log *.pdf
 	clear && exa
 

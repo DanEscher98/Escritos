@@ -32,6 +32,9 @@
 
 %Para compilar el documento
 %pdflatex --shell-escape file.tex
+\renewcommand*\contentsname{Sumario}
+\renewcommand{\markdownRendererHeadingOne}[1]{\section{#1}}
+
 
 \begin{document}
 \begin{titlepage}
@@ -45,6 +48,8 @@
 		\vspace{0.8cm}
 	\end{center}
 \end{titlepage}
+\tableofcontents
+\clearpage
 
 \foreach\N in {1,2,3,4,5,6,7,8,9} {
 		\IfFileExists{Files/\N.md} {
