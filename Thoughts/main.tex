@@ -21,6 +21,7 @@
 \usepackage{tabularx}
 \usepackage{xifthen}            % Aqui se encuentra la macro \IfFileExists
 \usepackage{tikz}               % Aqui se encuentra la macro \foreach
+\usepackage[ddmmyyyy]{datetime}
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
@@ -30,8 +31,6 @@
 	pdftitle={Pensamientos},
 }
 
-%Para compilar el documento
-%pdflatex --shell-escape file.tex
 \renewcommand*\contentsname{Sumario}
 \renewcommand{\markdownRendererHeadingOne}[1]{\section{#1}}
 
@@ -44,23 +43,22 @@
 		\vspace{1.5cm}
 		\textbf{Danyiel Colin}
 		\vfill
-		2022
+        Version: \today
 		\vspace{0.8cm}
 	\end{center}
 \end{titlepage}
 
-\currentpdfbookmark{Table of contents}{name}
+%\currentpdfbookmark{Table of contents}{name}
 \tableofcontents
 \clearpage
 
 \foreach\num in {1,2,3,4,5,6,7,8,9} {
-		\IfFileExists{Files/\num.md} {
-			\begin{large}
-				\markdownInput{Files/\num.md}
-			\end{large}
-		}
-		{}
-	}
+	\IfFileExists{Files/\num.md} {
+		\begin{large}
+			\markdownInput{Files/\num.md}
+		\end{large}
+    }{}
+}
 
 \markdownInput{TODO.md}
 
