@@ -22,6 +22,7 @@
 \usepackage{xifthen}            % Aqui se encuentra la macro \IfFileExists
 \usepackage{tikz}               % Aqui se encuentra la macro \foreach
 \usepackage[ddmmyyyy]{datetime}
+\usepackage{fancyhdr}
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
@@ -34,7 +35,7 @@
 \renewcommand*\contentsname{Sumario}
 \renewcommand{\markdownRendererHeadingOne}[1]{\section{#1}}
 
-
+\pagestyle{fancy}
 \begin{document}
 \begin{titlepage}
 	\begin{center}

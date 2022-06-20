@@ -13,7 +13,9 @@ pdf: $(TARGET).pdf clear
 	@evince $(TARGET).pdf
 
 clear:
-	rm -rdf _markdown_main/
-	rm -f *.out *.aux *.toc *.lua *.log
-	clear && exa
+	@rm -rdf _markdown_main/
+	@rm -f *.out *.aux *.toc *.lua *.log
+	@clear && exa
+
+.PHONY: clear
 
