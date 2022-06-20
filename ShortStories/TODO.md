@@ -17,4 +17,3 @@
 6. Mansión antigua : Yosef
 7. Edificio gris : Marcella
 8. undefined : Cynthia, Alejandra, Stephani
-9. Composición a cuatro manos : Amanda
