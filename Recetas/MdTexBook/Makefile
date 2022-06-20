@@ -14,7 +14,7 @@ pdf: $(TARGET).pdf clear
 
 clear:
 	@rm -rdf _markdown_main/
-	@rm -f *.out *.aux *.toc *.lua *.log
+	@rm -f *.out *.aux *.toc *.lua *.log *.err
 	@clear && exa
 
 .PHONY: clear
