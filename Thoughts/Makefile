@@ -11,10 +11,11 @@ $(TARGET).pdf: main.tex $(shell find ./Files -type f)
 
 pdf: $(TARGET).pdf clear
 	@evince $(TARGET).pdf
+	@cp $(TARGET).pdf $(HOME)/Downloads
 
 clear:
 	@rm -rdf _markdown_main/
-	@rm -f *.out *.aux *.toc *.lua *.log
+	@rm -f *.out *.aux *.toc *.lua *.log *.err
 	@clear && exa
 
 .PHONY: clear

@@ -10,7 +10,7 @@
 	definitionLists,    % Enable the pandoc definition list syntax extension
 	%relativeReferences, % Enable relative references in autolinks
 	%jekyllData,         % A markdown document may begin with yaml metadata
-	hybrid,             % Disable the escaping of special plain TEX characters
+	hybrid=true,             % Disable the escaping of special plain TEX characters
 	%taskLists,          % Pandoc task_lists syntax extension.
 	pipeTables,         % Enable the php Markdown table syntax extension
 	tableCaptions       % Pandoc table_captions syntax extension for pipe tables
@@ -23,7 +23,9 @@
 \usepackage{tikz}               % Aqui se encuentra la macro \foreach
 \usepackage[ddmmyyyy]{datetime}
 \usepackage{fancyhdr}
+\usepackage{amsmath}
 \usepackage{hyperref}
+\usepackage[english]{babel}
 \hypersetup{
 	colorlinks=true,
 	linkcolor=black,
