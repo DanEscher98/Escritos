@@ -67,10 +67,11 @@ rechazar a quien tiene creencias distintas a las nuestras? Si esa
 creencia le es terapéutica.
 
 ### Caso de estudio: La conversión cristiana
-> Dolencia: Vacío existencial
-> Tratamiento: Creer en la doctrina cristiana (la cual no es más que
-> una teoría en tonalidad imperativa)
-> Pregunta: Si el individuo en efecto mejora, el tratamiento fue
+> **Dolencia**: Vacío existencial
+>
+> **Tratamiento**: Creer en la doctrina cristiana
+>
+> **Pregunta**: Si el individuo en efecto mejora, el tratamiento fue
 > exitoso y por lo tanto es un tipo de terapia (No es cura, pues en
 > cuanto se deja de creer, se vuelve a la anterior condición). ¿Cómo
-> es que una teoría metafísica terminó siendo terapéutica?
+> es que una doctrina metafísica termina siendo terapéutica?
