@@ -1,5 +1,7 @@
 # Semántica del discurso enamorado
 
+> Segmento aislado de un posible monologo teatral
+
 Te digo, no se. Las palabras son palabras. Pueden
 estar abirragadas, mezcladas. Formando oraciones gramaticalmente bien
 formadas y aun asi, eso no dice nada sobre su valor interpretado. Creo
