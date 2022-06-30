@@ -8,3 +8,5 @@
 7 EdificioGris
 8 MosaicoCuatroEstampas
 9 undefined
+10 Climbing
+10 1Desierto
