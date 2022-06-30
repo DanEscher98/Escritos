@@ -1,4 +1,3 @@
-10 MosaicoCuatroEstampas
 1 SalaConAlfombra
 2 CaminoDeSetos
 3 ElCantaroCalcinado
@@ -8,5 +7,4 @@
 7 EdificioGris
 8 MosaicoCuatroEstampas
 9 undefined
-10 Climbing
-10 1Desierto
+10 Desierto
