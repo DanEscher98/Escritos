@@ -7,13 +7,13 @@ apresuradamente. Ni hacer afirmaciones sin fundamentos comprobados.
 Pero que rama no tiene problema con el avance tecnológico y venderse a
 intereses políticos? La ingeniería. A la ingeniería no le preocupa
 necesariamente tener la razón, le importa que funcione. **La teoría es
-unicamente medio para un fin?** Un grupo de científicos ciertamente
+únicamente medio para un fin?** Un grupo de científicos ciertamente
 puede dejarse mover para ahondar la investigación en un tema que
 favorezca al gobierno. Pero si algo no es verdad tarde que temprano va
 a ser desmontado. En cambio, un arma no tiene que ser verdadera, sólo
 tiene que poder disparar. Mejor dicho, en este mundo, la ciencia no
 tiene otro lugar que el de ser un servicio. Me recuerda a cuando
-decían que la iglesia le dió a la filosofía un puesto servil. Como
+decían que la iglesia le dio a la filosofía un puesto servil. Como
 mera herramienta para estructurar la fe. Si tuviera más talento,
 supongo podría desarrollar esto como una tesis "fe -> tecnología". O
 mejor dicho, la religión es a la filosofía, lo que tecnología es a la

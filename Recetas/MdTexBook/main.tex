@@ -10,7 +10,7 @@
 	definitionLists,    % Enable the pandoc definition list syntax extension
 	%relativeReferences, % Enable relative references in autolinks
 	%jekyllData,         % A markdown document may begin with yaml metadata
-	hybrid=true,             % Disable the escaping of special plain TEX characters
+	hybrid,             % Disable the escaping of special plain TEX characters
 	%taskLists,          % Pandoc task_lists syntax extension.
 	pipeTables,         % Enable the php Markdown table syntax extension
 	tableCaptions       % Pandoc table_captions syntax extension for pipe tables
@@ -23,9 +23,7 @@
 \usepackage{tikz}               % Aqui se encuentra la macro \foreach
 \usepackage[ddmmyyyy]{datetime}
 \usepackage{fancyhdr}
-\usepackage{amsmath}
 \usepackage{hyperref}
-\usepackage[english]{babel}
 \hypersetup{
 	colorlinks=true,
 	linkcolor=black,
@@ -42,7 +40,7 @@
 \begin{titlepage}
 	\begin{center}
 		\vspace*{1cm}
-		\Huge\textbf{Apuntes y observaciones}\\
+		\Huge\textbf{Template}\\
 		\vspace{1.5cm}
 		\textbf{Danyiel Colin}
 		\vfill
@@ -55,14 +53,12 @@
 \tableofcontents
 \clearpage
 
-\foreach\num in {1,2,...,13} {
+\foreach\num in {1,2,3,4,5,6,7,8,9} {
 	\IfFileExists{Files/\num.md} {
 		\begin{large}
 			\markdownInput{Files/\num.md}
 		\end{large}
     }{}
 }
-
-\markdownInput{TODO.md}
 
 \end{document}

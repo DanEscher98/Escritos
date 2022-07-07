@@ -11,13 +11,13 @@ function remove_name() {
 	for file_name in $(ls Files); do
 		num=$(echo $file_name | sed -n 's/\([0-9]*\)_.*$/\1/p')
 		name=$(echo $file_name \
-			| sed -n 's/[0-9]*_\(\S*\)\.md$/\1/p')
+			| sed -n 's/[0-9]_\(\S*\)\.md$/\1/p')
 
 		grep -qF "$num $name" titles.txt 2>&1
-		if [ $? -ne 0 ]; then # Add if doesn't exist
+		if [ $? -ne 0 ]; then
 			echo "$num $name" >> titles.txt
 		fi
-		if [ -n "$num" ]; then # Move if not null
+		if [ -n "$num" ]; then
 			mv Files/"$file_name" Files/$num.md
 		fi
 	done
@@ -28,7 +28,7 @@ function restore_name() {
 		num=$(echo $file_name | sed -n 's/\([0-9]*\)\.md$/\1/p')
 		name=$(grep -w "$num" titles.txt | awk '{ print $2 }')
 
-		if [ -n "$num" ] && [ -n "$name" ]; then 
+		if [ -n "$num" ] && [ -n "$name" ]; then
 			mv Files/"$num".md Files/"$num"_"$name".md
 		fi
 	done
