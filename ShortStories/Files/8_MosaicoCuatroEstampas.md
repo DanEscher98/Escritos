@@ -1,8 +1,8 @@
 # Mosaico en cuatro estampas
 
-"En un olvidado conflicto bélico, el amado de una maestra se alista en el
+_En un olvidado conflicto bélico, el amado de una maestra se alista en el
 ejército y muere. Al final se da un vistazo a lo que hubiese pasado de no ir a
-la guerra, teniendo su familia."
+la guerra, teniendo su familia._
 
 
 ## Preludio Andante
@@ -31,11 +31,13 @@ ella, abatiendo sus sentimientos. Abriendo las alas y proyectando una sombra
 parda junto al jardín... diríase que es un buitre. 
 
 
-## Antífona A cappella
+## Antífona a cappella
 
 -- "González, ¿se encuentra mejor?"
+
 -- "Sí señor, dentro de poco me habré repuesto y podré volver al frente. Como si
     aquellos desgraciados supieran apuntar."
+
 ¿Es tan banal el conflicto? Cuando la sangre es roja, los huesos siempre
 ocultos en la carne mantienen su blanca pureza, y la pluma con su danza azul
 decide nombrar a la amada. Nada vale más que el sencillo trago de agua de
@@ -47,6 +49,7 @@ antes haber cerrado los ojos de su oficial.
 ## Lied Ad libitum
 
 -- "El caballo quiere trotar papá."
+
 -- "No, debes dejarlo descansar. Que tú quieras
 volver a montarlo, no significa que él también quiera. Ven, quiero mostrarte
 algo."  Y lo guía hacia un arcón en el establo que el pequeño nunca había visto.
@@ -57,6 +60,7 @@ cambiar lo que fue. Se quiere manejar el destino de la vida misma, pero el
 desierto se interpone en tu travesía, extendiendo dunas heladas frente a ti. ¿De
 qué sirve ver al tintero junto a una medalla? Si ambos empolvados y fríos son
 incapaces de consolar al corazón doliente.
+
 -- "¡Vengan, es hora de comer!" ¿De qué sirve? Si terminado el relato
 vuelven a su tumba, la tinta y su compañía.
 
