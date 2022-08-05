@@ -29,6 +29,16 @@
 }
 
 %%% Macros
+\newcommand*{\inlineimg}[1]{%
+    \raisebox{-.3\baselineskip}{%
+        \includegraphics[
+            height=\baselineskip,
+            width=\baselineskip,
+            keepaspectratio,
+        ]{#1}%
+    }%
+}
+
 \newcommand{\sepspace}{\vspace*{1em}}		        % Vertical space macro
 \newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
 \newcommand{\NewSubPart}[1]{\subsection*{#1}}
