@@ -19,15 +19,12 @@ function daily_note() {
 	TODAY_FILE=$(find Files/ -name "*_$CURRENT_DATE:*.md" | head -n 1)
 
 	if [ ! -z "$TODAY_FILE" ]; then
-		echo "$TODAY_FILE"
+		printf "$TODAY_FILE\n"
 	else
 		echo -n "Set a tag for the file: "
 		read TAG
-		echo "tag: $TAG"
 		NUM=$(bc <<< "$(ls Files | wc -l) + 1")
-		echo "num: $NUM"
 		FILE_NAME="Files/$NUM"_"$CURRENT_DATE:$TAG.md"
-		echo "FILE_NAME: $FILE_NAME"
 		echo "# $(date '+%A %d of %B-%y'):" > "./$FILE_NAME"
 		echo "$FILE_NAME"
 	fi

@@ -2,7 +2,7 @@ SHELL := /usr/bin/bash
 TARGET 	= $(shell basename $(PWD))
 FLAGS	= --shell-escape --interaction=nonstopmode
 
-$(TARGET).pdf: main.tex $(shell find ./Files -type f)
+$(TARGET).pdf: main.tex
 	@bash -c "source ./format.sh; remove_name"
 	pdflatex $(FLAGS) main.tex 1> /dev/null
 	@pdflatex $(FLAGS) main.tex 1> /dev/null # 2nd compilation for TOC
