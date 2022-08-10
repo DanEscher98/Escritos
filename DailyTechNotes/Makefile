@@ -10,7 +10,7 @@ $(TARGET).pdf: main.tex
 	mv main.pdf $(TARGET).pdf
 
 note: ./Files
-	nvim "./Files/$(shell date '+%a%d-%b-%y').md"
+	nvim $(shell bash -c "source ./format.sh; daily_note")
 
 pdf: $(TARGET).pdf clear
 	@evince $(TARGET).pdf
