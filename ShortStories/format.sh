@@ -16,15 +16,13 @@ function daily_note() {
 	#	3. Fill the file with template
 	#	4. Return the name
 	CURRENT_DATE=$(date "+%a%d-%b-%y")
-	TODAY_FILE=$(find Files/ -name "*_$CURRENT_DATE:*.md" | head -n 1)
+	TODAY_FILE=$(find Files/ -name "*_$CURRENT_DATE*.md" | head -n 1)
 
 	if [ ! -z "$TODAY_FILE" ]; then
 		printf "$TODAY_FILE\n"
 	else
-		echo -n "Set a tag for the file: "
-		read TAG
 		NUM=$(bc <<< "$(ls Files | wc -l) + 1")
-		FILE_NAME="Files/$NUM"_"$CURRENT_DATE:$TAG.md"
+		FILE_NAME="Files/$NUM"_"$CURRENT_DATE.md"
 		echo "# $(date '+%A %d of %B-%y'):" > "./$FILE_NAME"
 		echo "$FILE_NAME"
 	fi
