@@ -34,8 +34,13 @@
 	pdftitle={Pensamientos},
 }
 
-\renewcommand*\contentsname{Sumario}
 \renewcommand{\markdownRendererHeadingOne}[1]{\section{#1}}
+\renewcommand{\markdownRendererHeadingTwo}[1]{
+	\subsection*{#1}
+}
+\renewcommand{\markdownRendererHeadingThree}[1]{
+	\subsubsection*{#1}
+}
 
 \pagestyle{fancy}
 \begin{document}
