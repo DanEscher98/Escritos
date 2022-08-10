@@ -7,6 +7,32 @@
 # Compile
 # Rename all files as $num_$name.md
 
+function daily_note() {
+	# if file with current date exists
+	#	then return its name
+	# else
+	#	1. Ask for a tag and set name
+	#	2. Touch file
+	#	3. Fill the file with template
+	#	4. Return the name
+	CURRENT_DATE=$(date "+%a%d-%b-%y")
+	TODAY_FILE=$(find Files/ -name "*_$CURRENT_DATE:*.md" | head -n 1)
+
+	if [ ! -z "$TODAY_FILE" ]; then
+		echo "$TODAY_FILE"
+	else
+		echo -n "Set a tag for the file: "
+		read TAG
+		echo "tag: $TAG"
+		NUM=$(bc <<< "$(ls Files | wc -l) + 1")
+		echo "num: $NUM"
+		FILE_NAME="Files/$NUM"_"$CURRENT_DATE:$TAG.md"
+		echo "FILE_NAME: $FILE_NAME"
+		echo "# $(date '+%A %d of %B-%y'):" > "./$FILE_NAME"
+		echo "$FILE_NAME"
+	fi
+}
+
 function remove_name() {
 	for file_name in $(ls Files); do
 		num=$(echo $file_name | sed -n 's/\([0-9]*\)_.*$/\1/p')
