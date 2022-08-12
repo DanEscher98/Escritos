@@ -16,7 +16,7 @@ note: ./Files
 pdf: $(TARGET).pdf clear
 	@#evince $(TARGET).pdf
 	@#cp $(TARGET).pdf $(HOME)/Downloads
-	@cp $(TARGET).pdf $(HOME)/MyWindows/Downloads
+	cp $(TARGET).pdf $(HOME)/MyWindows/Downloads
 
 clear:
 	@rm -rdf _markdown_main/

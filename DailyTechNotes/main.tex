@@ -34,7 +34,10 @@
 	pdftitle={Pensamientos},
 }
 
-\renewcommand{\markdownRendererHeadingOne}[1]{\section{#1}}
+\renewcommand{\markdownRendererHeadingOne}[1]{
+	\section*{#1}
+	\addcontentsline{toc}{section}{\protect\numberline{}#1}%
+}
 \renewcommand{\markdownRendererHeadingTwo}[1]{
 	\subsection*{#1}
 }
@@ -65,6 +68,8 @@
 			\begin{large}
 				\markdownInput{Files/\num.md}
 			\end{large}
+			\noindent\hrulefill
+			\vspace{5mm}
 		}{}
 	}
 \end{document}
