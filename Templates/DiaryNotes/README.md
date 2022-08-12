@@ -28,6 +28,12 @@ To create your first note, just type `make note` and it will create a
 `Markdown` file with the current date as name and at the header.
 ![Editing a new note](images/editing_note_nvim.png)
 
+To compile and generate the `pdf` file run `make pdf`. By default, the
+`pdf` will be named the same as the parent directory. These are some
+examples of the results.
+![Editing entry](images/editing_entry.png)
+![Contents](images/contents_ex.png)
+![Entry example](images/entry_example.png)
 
 ## Dependencies
 

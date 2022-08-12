@@ -1,5 +1,6 @@
 SHELL := /usr/bin/bash
 TARGET 	= $(shell basename $(PWD))
+FILES = $(wildcard pages/*.md)
 FLAGS	= --shell-escape --interaction=nonstopmode
 EDITOR	= vim
 
@@ -13,13 +14,13 @@ $(TARGET).pdf: main.tex
 note: ./pages
 	$(EDITOR) $(shell bash -c "source ./format.sh; daily_note")
 
-pdf: $(TARGET).pdf clear
+pdf: $(TARGET).pdf clear $(FILES)
 	@evince $(TARGET).pdf
 	@cp $(TARGET).pdf $(HOME)/Downloads
 
 clear:
 	@rm -rdf _markdown_main/
 	@rm -f *.out *.aux *.toc *.lua *.log *.err
-	@clear && exa
+	@clear && ls
 
 .PHONY: clear
