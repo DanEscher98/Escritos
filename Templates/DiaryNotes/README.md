@@ -11,7 +11,7 @@ To get locally this template you could run
 svn export https://github.com/DanEscher98/Escritos/trunk/Templates/DiaryNotes
 ```
 
-If you hadn't installed `svn` simply type `sudo apt -y install
+If you hadn't installed the `svn` command, simply type `sudo apt -y install
 subversion`
 
 ## Usage

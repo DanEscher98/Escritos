@@ -10,7 +10,7 @@ $(TARGET).pdf: main.tex
 	@bash -c "source ./format.sh; restore_name"
 	mv main.pdf $(TARGET).pdf
 
-note: ./Files
+note: ./pages
 	$(EDITOR) $(shell bash -c "source ./format.sh; daily_note")
 
 pdf: $(TARGET).pdf clear
