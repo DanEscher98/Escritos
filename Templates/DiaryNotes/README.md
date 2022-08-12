@@ -2,7 +2,8 @@
 
 This template aims to agile the process of take daily notes, personal
 diary, etc. All the entries are intended to be written in `Markdown`,
-the LaTeX template is completely automated through a `Makefile`.
+the LaTeX template is completely automated through a `Makefile`. Also
+a *Contents Table* is generated.
 
 Almost all basic `Markdown` syntax features (code blocks, citations,
 pipe tables, footnotes, etc.) are supported. I suggest the
