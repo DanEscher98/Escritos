@@ -1,7 +1,7 @@
 SHELL := /usr/bin/bash
 TARGET 	= $(shell basename $(PWD))
 FLAGS	= --shell-escape --interaction=nonstopmode
-EDITOR	= nvim +'colorscheme PaperColor'
+EDITOR	= vim
 
 $(TARGET).pdf: main.tex
 	@bash -c "source ./format.sh; remove_name"
@@ -14,9 +14,8 @@ note: ./Files
 	$(EDITOR) $(shell bash -c "source ./format.sh; daily_note")
 
 pdf: $(TARGET).pdf clear
-	@#evince $(TARGET).pdf
-	@#cp $(TARGET).pdf $(HOME)/Downloads
-	cp $(TARGET).pdf $(HOME)/MyWindows/Downloads
+	@evince $(TARGET).pdf
+	@cp $(TARGET).pdf $(HOME)/Downloads
 
 clear:
 	@rm -rdf _markdown_main/
@@ -24,4 +23,3 @@ clear:
 	@clear && exa
 
 .PHONY: clear
-
