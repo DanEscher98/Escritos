@@ -4,6 +4,16 @@ This template aims to agile the process of take daily notes, personal
 diary, etc. All the entries are intended to be written in `Markdown`,
 the LaTeX template is completely automated through a `Makefile`.
 
+## Download
+
+To get locally this template you could run
+```bash
+svn export https://github.com/DanEscher98/Escritos/trunk/Templates/DiaryNotes
+```
+
+If you hadn't installed `svn` simply type `sudo apt -y install
+subversion`
+
 ## Usage
 
 To create your first note, just type `make note` and it will create a
