@@ -4,6 +4,12 @@ This template aims to agile the process of take daily notes, personal
 diary, etc. All the entries are intended to be written in `Markdown`,
 the LaTeX template is completely automated through a `Makefile`.
 
+Almost all basic `Markdown` syntax features (code blocks, citations,
+pipe tables, footnotes, etc.) are supported. I suggest the
+[Markdown Cheat-sheet](https://www.markdownguide.org/cheat-sheet/) to
+get started with `Markdown`. If some features are not working, please
+raise a ticket.
+
 
 ## Download
 
@@ -44,4 +50,4 @@ position number. To restore the full name, just run
 bash -c "source format.sh; restore_name"
 ```
 Please DO NOT remove the `titles.txt` file, the `format.sh` script
-depends depends on is existence to recover the names.
+depends on its existence to recover the names.
