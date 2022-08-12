@@ -43,3 +43,5 @@ position number. To restore the full name, just run
 ```bash
 bash -c "source format.sh; restore_name"
 ```
+Please DO NOT remove the `titles.txt` file, the `format.sh` script
+depends depends on is existence to recover the names.
