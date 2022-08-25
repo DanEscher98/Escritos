@@ -13,7 +13,7 @@ $(TARGET).pdf: main.tex
 note: ./Files
 	$(EDITOR) $(shell bash -c "source ./format.sh; daily_note")
 
-pdf: $(TARGET).pdf clear
+pdf: $(TARGET).pdf clear $(wildcard dir/*.md)
 	@#evince $(TARGET).pdf
 	@#cp $(TARGET).pdf $(HOME)/Downloads
 	cp $(TARGET).pdf $(HOME)/MyWindows/Downloads
