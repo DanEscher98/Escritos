@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Friday 12/August/22:
-=======
 # Friday 12/August/22: TeoEle1
 
 - Intensidad de campo eléctrico:
@@ -52,4 +49,3 @@
 8. Teorema de muestreo
 9. Transformada de Z
 10. Funciones de Besel
->>>>>>> e119e2c (modified:   Files/1_Fri5-8-22.md)
