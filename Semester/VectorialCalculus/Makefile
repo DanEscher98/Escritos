@@ -1,7 +1,8 @@
 SHELL := /usr/bin/bash
 TARGET 	= $(shell basename $(PWD))
+FILES = $(wildcard pages/*.md)
 FLAGS	= --shell-escape --interaction=nonstopmode
-EDITOR	= nvim +'colorscheme PaperColor'
+EDITOR	= nvim
 
 $(TARGET).pdf: main.tex
 	@bash -c "source ./format.sh; remove_name"
@@ -10,25 +11,16 @@ $(TARGET).pdf: main.tex
 	@bash -c "source ./format.sh; restore_name"
 	mv main.pdf $(TARGET).pdf
 
-note: ./Files
+note: ./pages
 	$(EDITOR) $(shell bash -c "source ./format.sh; daily_note")
 
-<<<<<<< HEAD
-pdf: $(TARGET).pdf clear $(wildcard dir/*.md)
-	@#evince $(TARGET).pdf
-	@#cp $(TARGET).pdf $(HOME)/Downloads
-	cp $(TARGET).pdf $(HOME)/MyWindows/Downloads
-=======
-pdf: $(TARGET).pdf clear
+pdf: $(TARGET).pdf clear $(FILES)
 	@evince $(TARGET).pdf
 	@cp $(TARGET).pdf $(HOME)/Downloads
-	#cp $(TARGET).pdf $(HOME)/MyWindows/Downloads
->>>>>>> 60b889a (various)
 
 clear:
 	@rm -rdf _markdown_main/
 	@rm -f *.out *.aux *.toc *.lua *.log *.err
-	@clear && exa
+	@clear && ls
 
 .PHONY: clear
-
