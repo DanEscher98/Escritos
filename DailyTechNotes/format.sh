@@ -7,6 +7,8 @@
 # Compile
 # Rename all files as $num_$name.md
 
+FILES_DIR=pages
+
 function daily_note() {
 	# if file with current date exists
 	#	then return its name
@@ -16,23 +18,20 @@ function daily_note() {
 	#	3. Fill the file with template
 	#	4. Return the name
 	CURRENT_DATE=$(date "+%a%d-%b-%y")
-	TODAY_FILE=$(find Files/ -name "*_$CURRENT_DATE*.md" | head -n 1)
+	TODAY_FILE=$(find $FILES_DIR/ -name "*_$CURRENT_DATE*.md" | head -n 1)
 
 	if [ ! -z "$TODAY_FILE" ]; then
-		echo "$TODAY_FILE"
+		printf "$TODAY_FILE\n"
 	else
-		# echo -n "Set a tag for the file: "
-		# read TAG
-		# echo "tag: $TAG"
-		NUM=$(bc <<< "$(ls Files | wc -l) + 1")
-		FILE_NAME="Files/$NUM"_"$CURRENT_DATE.md"
-		echo "# $(date '+%A %d/%B/%y'):" > "./$FILE_NAME"
+		NUM=$(bc <<< "$(ls pages | wc -l) + 1")
+		FILE_NAME="$FILES_DIR/$NUM"_"$CURRENT_DATE.md"
+		echo "# $(date '+%A %d of %B-%y'):" > "./$FILE_NAME"
 		echo "$FILE_NAME"
 	fi
 }
 
 function remove_name() {
-	for file_name in $(ls Files); do
+	for file_name in $(ls $FILES_DIR); do
 		num=$(echo $file_name | sed -n 's/\([0-9]*\)_.*$/\1/p')
 		name=$(echo $file_name \
 			| sed -n 's/[0-9]*_\(\S*\)\.md$/\1/p')
@@ -42,18 +41,18 @@ function remove_name() {
 			echo "$num $name" >> titles.txt
 		fi
 		if [ -n "$num" ]; then # Move if not null
-			mv Files/"$file_name" Files/$num.md
+			mv $FILES_DIR/"$file_name" $FILES_DIR/$num.md
 		fi
 	done
 }
 
 function restore_name() {
-	for file_name in $(ls Files); do
+	for file_name in $(ls $FILES_DIR); do
 		num=$(echo $file_name | sed -n 's/\([0-9]*\)\.md$/\1/p')
 		name=$(grep -w "$num" titles.txt | awk '{ print $2 }')
 
 		if [ -n "$num" ] && [ -n "$name" ]; then 
-			mv Files/"$num".md Files/"$num"_"$name".md
+			mv $FILES_DIR/"$num".md $FILES_DIR/"$num"_"$name".md
 		fi
 	done
 }

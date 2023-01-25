@@ -56,9 +56,9 @@
 \clearpage
 
 \foreach\num in {1,2,...,13} {
-	\IfFileExists{Files/\num.md} {
+	\IfFileExists{pages/\num.md} {
 		\begin{large}
-			\markdownInput{Files/\num.md}
+			\markdownInput{pages/\num.md}
 		\end{large}
     }{}
 }
