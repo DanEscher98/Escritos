@@ -51,5 +51,5 @@ Yo recuerdo que
     tu me dijiste que
         tu le habias dicho a tu amigo que
             tu creias que
-                yo me habia ganado un premio.
+                yo ganaria un premio.
 ```
