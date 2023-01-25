@@ -29,6 +29,7 @@ sudo apt -y install subversion
 
 To create your first note, type `just note` and it will create a
 `Markdown` file with the current date as name and at the header.
+You can see the available commands with `just --list`
 
 ![Editing a new note](images/editing_note_nvim.png)
 
@@ -50,7 +51,19 @@ Although theoretically it could run on a `Windows` machine doing minor
 changes on the script, this has not been tested. To install the full
 `LaTeX` package type
 ```bash
+# Ubuntu based distros
 sudo apt -y install texlive-full
+
+# Fedora Linux
+sudo dnf install texlive-collection-latexextra texlive-gobble
+```
+
+Also, [`just`](https://github.com/casey/just) is used to easy usage, instead of
+`make`. The easiest way to install is using the
+[Github Cli](https://github.com/cli/cli/blob/trunk/docs/install_linux.md) and its
+extension [`install`](https://github.com/redraw/gh-install)
+```bash
+gh install casey/just
 ```
 
 

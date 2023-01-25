@@ -1,7 +1,7 @@
 TARGET  := `basename $PWD`
 FLAGS   := '--shell-escape --interaction=nonstopmode'
 
-# Compiles a main.txt to pdf
+# Compiles the main.txt to pdf
 compile:
   @bash -c "source ./src/format.sh; remove_name"
   pdflatex {{FLAGS}} main.tex 1> /dev/null
@@ -15,17 +15,16 @@ open:
   @evince --fullscreen --page-index=1 {{TARGET}}.pdf
   @cp {{TARGET}}.pdf `echo $HOME/Downloads`
 
-# Create a new entry, with date as name
+# New entry with date as name, default editor `vi`
 note:
-  lvim `bash -c "source ./src/format.sh; daily_note"`
+  vi `bash -c "source ./src/format.sh; daily_note"`
 
+# Restore complete names from src/titles.txt
 restore:
   bash -c "source format.sh; restore_name"
  
+# Remove unnecesary files after compile
 clear:
   @rm -rdf _markdown_main/
   @rm -f *.out *.aux *.toc *.lua *.log *.err
   @clear && exa
-
-name:
-  echo {{TARGET}}
