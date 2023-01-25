@@ -37,9 +37,9 @@ function remove_name() {
 		name=$(echo $file_name \
 			| sed -n 's/[0-9]*_\(\S*\)\.md$/\1/p')
 
-		grep -qF "$num $name" titles.txt 2>&1
+		grep -qF "$num $name" src/titles.txt 2>&1
 		if [ $? -ne 0 ]; then # Add if doesn't exist
-			echo "$num $name" >> titles.txt
+			echo "$num $name" >> src/titles.txt
 		fi
 		if [ -n "$num" ]; then # Move if not null
 			mv $WORKDIR/"$file_name" $WORKDIR/$num.md
@@ -51,7 +51,7 @@ function restore_name() {
 	# Rename all files as $num_$name.md
 	for file_name in $(ls $WORKDIR); do
 		num=$(echo $file_name | sed -n 's/\([0-9]*\)\.md$/\1/p')
-		name=$(grep -w "$num" titles.txt | awk '{ print $2 }')
+		name=$(grep -w "$num" src/titles.txt | awk '{ print $2 }')
 
 		if [ -n "$num" ] && [ -n "$name" ]; then 
 			mv $WORKDIR/"$num".md $WORKDIR/"$num"_"$name".md

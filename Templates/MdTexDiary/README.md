@@ -16,22 +16,29 @@ raise a ticket.
 
 To get locally this template you could run
 ```bash
-svn export https://github.com/DanEscher98/Escritos/trunk/Templates/DiaryNotes
+svn export https://github.com/DanEscher98/Escritos/trunk/Templates/MdTexDiary
 ```
 
-If you hadn't installed the `svn` command, simply type `sudo apt -y install
-subversion`
+If you hadn't installed the `svn` command, simply type
+```bash
+sudo apt -y install subversion
+```
 
 
 ## Usage
 
-To create your first note, just type `make note` and it will create a
+To create your first note, type `just note` and it will create a
 `Markdown` file with the current date as name and at the header.
+
 ![Editing a new note](images/editing_note_nvim.png)
 
-To compile and generate the `pdf` file run `make pdf`. By default, the
+> A `Makefile` is provide alongside the `Justfile`. It's located at the `src/`
+> directory. Use the one you like the most.
+
+To compile and generate the `pdf` file run `just compile`. By default, the
 `pdf` will be named the same as the parent directory. These are some
 examples of the results.
+
 ![Editing entry](images/editing_entry.png)
 ![Contents](images/contents_ex.png)
 ![Entry example](images/entry_example.png)
@@ -40,21 +47,18 @@ examples of the results.
 
 Its supposed that you had `pdflatex` command in your `Linux` distro.
 Although theoretically it could run on a `Windows` machine doing minor
-changes on the script, this has not been tested. Simply type
+changes on the script, this has not been tested. To install the full
+`LaTeX` package type
 ```bash
 sudo apt -y install texlive-full
 ```
-in order to get the full `LaTeX` experience.
 
 
 ## Common troubleshooting
 
-If for some reason the `make` fails at the `pdflatex` compilation
+If for some reason the `just` recipe fails at the `pdflatex` compilation
 step, all the files at `pages/` will be left renamed with just its
-position number. To restore the full name, just run
+position number. To restore the full name, type `just rename`.
 
-```bash
-bash -c "source format.sh; restore_name"
-```
-Please DO NOT remove the `titles.txt` file, the `format.sh` script
+Please DO NOT remove the `src/titles.txt` file, the `format.sh` script
 depends on its existence to recover the names.

@@ -3,10 +3,10 @@ FLAGS   := '--shell-escape --interaction=nonstopmode'
 
 # Compiles a main.txt to pdf
 compile:
-  @bash -c "source ./format.sh; remove_name"
+  @bash -c "source ./src/format.sh; remove_name"
   pdflatex {{FLAGS}} main.tex 1> /dev/null
   @pdflatex {{FLAGS}} main.tex 1> /dev/null # 2nd compilation for TOC
-  @bash -c "source ./format.sh; restore_name"
+  @bash -c "source ./src/format.sh; restore_name"
   @mv main.pdf {{TARGET}}.pdf
   @echo -e "📖 {{TARGET}}.pdf \e[32mready\e[0m"
  
@@ -17,7 +17,10 @@ open:
 
 # Create a new entry, with date as name
 note:
-  lvim `bash -c "source ./format.sh; daily_note"`
+  lvim `bash -c "source ./src/format.sh; daily_note"`
+
+restore:
+  bash -c "source format.sh; restore_name"
  
 clear:
   @rm -rdf _markdown_main/
