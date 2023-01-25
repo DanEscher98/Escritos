@@ -33,8 +33,17 @@ You can see the available commands with `just --list`
 
 ![Editing a new note](images/editing_note_nvim.png)
 
-> A `Makefile` is provide alongside the `Justfile`. It's located at the `src/`
-> directory. Use the one you like the most.
+A `Makefile` is provide alongside the `Justfile`. It's located at the `src/`
+directory. Use the one you like the most. You can see the available `just`
+recipes with `just --list`
+```txt
+Available recipes:
+    clear   # Remove unnecesary files after compile
+    compile # Compiles the main.txt to pdf
+    note    # New entry with date as name, default editor `vi`
+    open    # Open the pdf with `evince`
+    restore # Restore complete names from src/titles.txt
+```
 
 To compile and generate the `pdf` file run `just compile`. By default, the
 `pdf` will be named the same as the parent directory. These are some
