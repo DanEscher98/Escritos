@@ -41,7 +41,7 @@ function daily_note() {
 		# echo -n "Set a tag for the file: "
 		# read TAG
 		# echo "tag: $TAG"
-		NUM=$(ls $WORKDIR | wc -l)
+    NUM=$(bc <<< "$(ls $WORKDIR | wc -l) + 1")
 		FILE_NAME="$WORKDIR/$NUM"_"$CURRENT_DATE.md"
 		echo "# $(date '+%A %d/%B/%y'):" > "./$FILE_NAME"
 		echo "$FILE_NAME"
