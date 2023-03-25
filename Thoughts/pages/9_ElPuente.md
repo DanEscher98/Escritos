@@ -46,7 +46,7 @@ $$\begin{aligned}
     F(x) &= \int^a_b \frac{1}{3}x^3
 \end{aligned}$$
 
-```txt
+```
 Yo recuerdo que
     tu me dijiste que
         tu le habias dicho a tu amigo que

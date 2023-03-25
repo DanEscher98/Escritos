@@ -1,52 +1,18 @@
 \documentclass{article}
-\usepackage[
-	fencedCode,         % Enable the commonmark fenced code block extension
-	hashEnumerators,    % Use hash symbols (#.) as ordered item list markers
-	inlineFootnotes,    % Enable the pandoc inline footnote syntax extension
-	footnotes,          % Enable the pandoc footnote syntax extension
-	html,               % Enable the recognition of HTML markup
-	contentBlocks,      % Enable the iAWriter content blocks syntax extension
-	citations,          % Enable the pandoc citation syntax extension
-	definitionLists,    % Enable the pandoc definition list syntax extension
-	%relativeReferences, % Enable relative references in autolinks
-	%jekyllData,         % A markdown document may begin with yaml metadata
-	hybrid=true,             % Disable the escaping of special plain TEX characters
-	%taskLists,          % Pandoc task_lists syntax extension.
-	pipeTables,         % Enable the php Markdown table syntax extension
-	tableCaptions       % Pandoc table_captions syntax extension for pipe tables
-]{markdown}                     % Necesaria para incluir archivos md
-\usepackage[utf8]{inputenc}	    % Importante para escribir acentos
-\usepackage{indentfirst}        % Para indentar el primer parrafo
-\usepackage{blindtext}          % Permite incorporar archivos externos
-\usepackage{tabularx}
-\usepackage{xifthen}            % Aqui se encuentra la macro \IfFileExists
-\usepackage{tikz}               % Aqui se encuentra la macro \foreach
-\usepackage[ddmmyyyy]{datetime}
-\usepackage{fancyhdr}
-\usepackage{amsmath}
-\usepackage{hyperref}
-\usepackage[english]{babel}
-\hypersetup{
-	colorlinks=true,
-	linkcolor=black,
-	filecolor=magenta,
-	urlcolor=cyan,
-	pdftitle={Pensamientos},
-}
+\usepackage{src/template}
+\hypersetup{pdftitle={A quadratic voting system}}
 
-\renewcommand*\contentsname{Sumario}
-\renewcommand{\markdownRendererHeadingOne}[1]{\section{#1}}
-
-\pagestyle{fancy}
 \begin{document}
 \begin{titlepage}
 	\begin{center}
 		\vspace*{1cm}
-		\Huge\textbf{Apuntes y observaciones}\\
-		\vspace{1.5cm}
-		\textbf{Danyiel Colin}
+		\Huge\textbf{MdTexDiary}\\
+    \vspace{0.5cm}
+    \Large\textbf{A template for markdown notes}\\
+		\vspace{2cm}
+		\textbf{Author name}: sample@mail.com
 		\vfill
-        Version: \today
+		Version: \today
 		\vspace{0.8cm}
 	\end{center}
 \end{titlepage}
@@ -55,14 +21,14 @@
 \tableofcontents
 \clearpage
 
-\foreach\num in {1,2,...,13} {
-	\IfFileExists{pages/\num.md} {
-		\begin{large}
-			\markdownInput{pages/\num.md}
-		\end{large}
-    }{}
-}
-
-\markdownInput{TODO.md}
-
+\foreach\num in {0,1,...,10} {
+		\IfFileExists{pages/\num.md} {
+			\begin{large}
+				\markdownInput{pages/\num.md}
+			\end{large}
+      %\pagebreak
+			\noindent\hrulefill
+			\vspace{5mm}
+		}{}
+	}
 \end{document}

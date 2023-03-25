@@ -36,7 +36,7 @@ un contexto determinado, no implica que no podamos ver a $A'$ en el
 mismo contexto. **Ejemplo:** somos "ciegos" respecto a lo que está
 detrás nuestro, tenemos que voltear la cabeza.
 
-```typescript
+```
 let CONTEXT = Individuo(yo)
 B: Belleza = Trascendental.Belleza.Abstract()
 O: Object = Life.randomEvent(yo)
