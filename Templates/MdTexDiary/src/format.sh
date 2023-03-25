@@ -2,6 +2,28 @@
 
 WORKDIR=pages
 
+function next_num() {
+  NUM=$(bc <<< "$(ls $WORKDIR | wc -l) + 1")
+  echo "$NUM"
+}
+
+function simple_note() {
+  NAME="$*"
+  CAMEL_NAME=$(to_camelcase "$NAME")
+	FILE_NAME=$(find ./$WORKDIR -name "*_$CAMEL_NAME.md" | head -n 1)
+
+	if [ ! -z "$FILE_NAME" ]; then
+		echo "$FILE_NAME"
+	else
+    NUM=$(bc <<< "$(ls $WORKDIR | wc -l) + 1")
+
+    NEW_FILE="$WORKDIR/$NUM"_"$CAMEL_NAME.md"
+
+    echo "# $(sed 's/^./\U&/' <<< $NAME)" > $NEW_FILE
+    echo $NEW_FILE
+  fi
+}
+
 function daily_note() {
 	# if file with current date exists
 	#	then return its name
@@ -19,7 +41,7 @@ function daily_note() {
 		# echo -n "Set a tag for the file: "
 		# read TAG
 		# echo "tag: $TAG"
-		NUM=$(bc <<< "$(ls $WORKDIR | wc -l) + 1")
+		NUM=$(ls $WORKDIR | wc -l)
 		FILE_NAME="$WORKDIR/$NUM"_"$CURRENT_DATE.md"
 		echo "# $(date '+%A %d/%B/%y'):" > "./$FILE_NAME"
 		echo "$FILE_NAME"
@@ -53,8 +75,20 @@ function restore_name() {
 		num=$(echo $file_name | sed -n 's/\([0-9]*\)\.md$/\1/p')
 		name=$(grep -w "$num" src/titles.txt | awk '{ print $2 }')
 
-		if [ -n "$num" ] && [ -n "$name" ]; then 
+		if [ -n "$num" ] && [ -n "$name" ]; then
 			mv $WORKDIR/"$num".md $WORKDIR/"$num"_"$name".md
 		fi
 	done
+}
+
+function to_camelcase() {
+  # spaces to underscores
+  # phrase to lowercase
+  # first letter of each word to uppercase
+  # remove underscores
+
+  echo "$1" \
+    | tr ' ' '_' \
+    | tr '[:upper:]' '[:lower:]' \
+    | sed -r 's/(^|_)([a-z])/\U\2/g'
 }

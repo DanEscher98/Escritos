@@ -1,13 +1,16 @@
 \documentclass{article}
 \usepackage{src/template}
+\hypersetup{pdftitle={A quadratic voting system}}
 
 \begin{document}
 \begin{titlepage}
 	\begin{center}
 		\vspace*{1cm}
-		\Huge\textbf{Daily Notes}\\ % SET THE TITLE
-		\vspace{1.5cm}
-		\textbf{The Author} % SET THE AUTHOR
+		\Huge\textbf{Quadratic Voting on Blockchain}\\
+    \vspace{0.5cm}
+    \Large\textbf{A Rust-y proposal for a squared democracy}\\
+		\vspace{2cm}
+		\textbf{Danyiel Colin}: amaniel2718@protonmail.com
 		\vfill
 		Version: \today
 		\vspace{0.8cm}
@@ -18,11 +21,12 @@
 \tableofcontents
 \clearpage
 
-\foreach\num in {1,2,...,20} {
+\foreach\num in {0,1,...,10} {
 		\IfFileExists{pages/\num.md} {
 			\begin{large}
 				\markdownInput{pages/\num.md}
 			\end{large}
+      %\pagebreak
 			\noindent\hrulefill
 			\vspace{5mm}
 		}{}

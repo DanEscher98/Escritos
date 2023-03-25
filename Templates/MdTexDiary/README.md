@@ -1,4 +1,9 @@
-# Diary Notes: LaTeX template
+---
+author: Daniel Sanchez
+email: amaniel2718@protonmail.com
+---
+
+# Compilation guide
 
 This template aims to agile the process of take daily notes, personal
 diary, etc. All the entries are intended to be written in `Markdown`,
