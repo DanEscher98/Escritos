@@ -1,10 +1,16 @@
-\mytitle{\Large Haikus}\\[0.1cm]
+\documentclass{article}
+\usepackage{verse}
 
+\newcommand{\attrib}[1]{\nopagebreak{\raggedleft\footnotesize #1\par}}
+\renewcommand{\poemtitlefont}{\normalfont\large\itshape\centering}
+
+\begin{document}
+
+\poemtitle{Pan trigal}
 \begin{verse}[10em]
-	\poemlines{2}
 	\begin{altverse}
-		Espiga erguida\\
-		Acero afila. Masa,\\
+		Espiga erguida\\ \hspace{1pt}
+    Acero afila. Masa,\\
 		el fuego aviva.\\
 	\end{altverse}
 \end{verse}
@@ -58,11 +64,13 @@
 	\end{altverse}
 \end{verse}
 
+\poemtitle{Chrome Dino}
 \begin{verse}[10em]
 	\begin{altverse}
-		Teclado tristón, polvoso te ves.
-		Perdiste el space? Tu culpa no es.
-    Cactus golpeó, Dino marca seis mil.
-    Destino, mártir por corte wifi.
+		Teclado tristón, polvoso te ves. \\
+		Perdiste el space? Tu culpa no es. \\
+    Cactus golpeó, Dino marca seis mil. \\
+    Destino, mártir por corte wifi. \\
 	\end{altverse}
 \end{verse}
+\end{document}

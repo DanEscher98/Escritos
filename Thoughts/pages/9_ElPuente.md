@@ -27,29 +27,3 @@ enunciado y el segmento de realidad al que se refiere".
 Nuestras decisiones están dadas por las opciones que emanan de nuestro
 contexto. Y a  su vez nuestras decisiones modifican el contexto. Una
 relación recursiva en mi opinión.
-
-La `subshell` como equivalente a la oración subordinada, apuntará a un
-isomorfismo en tonalidad poética?
-
-| Enunciado                 | Posible equivalente semántico |
-| :------------------------ | :---------------------------- |
-| Creo que reconozco eso    | `assert_c $(assert_r obj)`    |
-| Creo en eso               | `assert_c < obj`              |
-| Reconozco eso             | `assert_r obj`                |
-| Creo reconocer eso        | `assert_r --mod assert_c obj` |
-
-
-$$\vspace{1mm}$$
-$$\begin{aligned}
-    f(x) &= x^2\\\
-    g(x) &= \frac{1}{x}\\\
-    F(x) &= \int^a_b \frac{1}{3}x^3
-\end{aligned}$$
-
-```
-Yo recuerdo que
-    tu me dijiste que
-        tu le habias dicho a tu amigo que
-            tu creias que
-                yo ganaria un premio.
-```

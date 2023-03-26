@@ -1,3 +1,4 @@
+\usepackage{verse}
 \usepackage[
 	fencedCode,         % Enable the commonmark fenced code block extension
 	hashEnumerators,    % Use hash symbols (#.) as ordered item list markers
@@ -15,6 +16,7 @@
 	tableCaptions       % Pandoc table_captions syntax extension for pipe tables
 ]{markdown}                     % Necesaria para incluir archivos md
 \usepackage[utf8]{inputenc}	    % Importante para escribir acentos
+\usepackage[T1]{fontenc}
 \usepackage{indentfirst}        % Para indentar el primer parrafo
 \usepackage{blindtext}          % Permite incorporar archivos externos
 \usepackage{tabularx}
@@ -23,13 +25,16 @@
 \usepackage[ddmmyyyy]{datetime}
 \usepackage{fancyhdr}
 \usepackage{amsmath}
-\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{semantic}
 \usepackage{bookmark}
 %\usepackage{verbatim}
 %\usepackage{minted}
 \usepackage{listings, listings-rust}
 \usepackage{xcolor}
 \usepackage[english]{babel}
+\usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
 	linkcolor=black,
@@ -79,6 +84,10 @@
 \renewcommand{\markdownRendererInputFencedCode}[2]{
   \lstinputlisting[language=#2]{#1}
   % \vspace{0.5cm}\\
+}
+
+\renewcommand{\poemtitlefont}{
+  \normalfont\large\itshape\centering
 }
 
 \pagestyle{fancy}

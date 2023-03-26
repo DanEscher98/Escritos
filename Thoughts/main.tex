@@ -6,11 +6,11 @@
 \begin{titlepage}
 	\begin{center}
 		\vspace*{1cm}
-		\Huge\textbf{MdTexDiary}\\
+		\Huge\textbf{Pensamientos}\\
     \vspace{0.5cm}
-    \Large\textbf{A template for markdown notes}\\
+    \Large\textbf{Ácrona bitácora}\\
 		\vspace{2cm}
-		\textbf{Author name}: sample@mail.com
+		\textbf{Danyiel Colin}: amaniel2718@protonmail.com
 		\vfill
 		Version: \today
 		\vspace{0.8cm}
@@ -21,14 +21,18 @@
 \tableofcontents
 \clearpage
 
-\foreach\num in {0,1,...,10} {
+\foreach\num in {0,1,...,15} {
 		\IfFileExists{pages/\num.md} {
 			\begin{large}
 				\markdownInput{pages/\num.md}
 			\end{large}
       %\pagebreak
-			\noindent\hrulefill
+      \noindent
+      \vspace{1mm}
+      \hrulefill
 			\vspace{5mm}
 		}{}
 	}
+\markdownInput{TODO.md}
+\markdownInput{pages/randomstuff.md}
 \end{document}
